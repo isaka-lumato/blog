@@ -1,0 +1,18 @@
+<div>
+    <div class="mr-5 block mt-2">
+        <img src="<%= @user.photo %>" class="rounded float-start rounded border img-thumbnail" style="width: 150px" alt="User image">
+      </div>
+          <div class="ml-5 w-100 px-5">
+        <h2 class="text-secondary text-muted"><%= @user.name %></h2>
+        <% if @user.posts_counter %>
+          <p class="float-right text-end text-muted pt-5">Number of posts: <%= @user.posts.length %> </p>
+        <% else %>
+          <p class="float-right text-end text-muted pt-5">Number of posts: 0 </p>
+        <% end %>
+      </div>
+    <div>
+      <p>
+      <%= @user.bio%>
+      </p>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<% @user.recent_posts.each do |u| %>
+<div class = "vh-100 d-block">
+<h1>
+ 
+           <%= u.title %>
+   </h1>
+<p><%= u.text %></p>
+   <div class="d-flex justify-content-end">
+        <div class="d-flex">
+          <div class="mx-2">
+            <span>0</span>
+            <i class="fas fa-comment mx-1"></i>
+          </div>
+          <div class="mx-2">
+            <span>0</span>
+            <i class="fas fa-heart mx-1"></i>
+          </div>
+        </div>
+      </div>
+      <div class="list-inline">
+        <% u.recent_comments.each do |cmt| %>
+          <li class="border-start border-2 border-info px-4 mb-3 shadow py-1">
+            <h5><%= cmt.author.name %></h5>
+            <p><%= cmt.text %></p>
+          </li>
+        <% end %>
+      </div>
+       
+<% end %>
