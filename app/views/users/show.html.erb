@@ -1,7 +1,10 @@
 <%= render "users/u_show" %>
+<% user = User.where(id: params[:id])[0] %>
+ <div class="d-flex justify-content-center mb-5">
+    <a href="<%= users_path + "/" + user.id.to_s + "/posts" %>" class="btn btn-info text-white">Show All Posts</a>
+  </div>
 <% @user.recent_posts.each do |u| %>
 <div>
-<% user = User.where(id: params[:id])[0] %>
 <h1>
 <%= u.title %>
 </h1>
@@ -12,14 +15,12 @@
             <span><%= u.comments_counter %></span>            <i class="fas fa-comment mx-1"></i>
           </div>
           <div class="mx-2 d-flex justify-center">            <span><%= u.likes_counter %></span>            <i class="fas fa-heart mx-1"></i>
-                        <%= render partial: "posts/like", locals: { url: "/users/#{@user.id}/posts/#{post.id}/likes", post: post } %>
+                        <%= render partial: "posts/like", locals: { url: "/users/#{@user.id}/posts/#{u.id}/likes", post: u } %>
           </div>
         </div>
       </div>
        
-  <div class="d-flex justify-content-center mb-5">
-    <a href="<%= users_path + "/" + user.id.to_s + "/posts" %>" class="btn btn-info text-white">Show All Posts</a>
-  </div>
 <% end %>
+ 
 
 </div>
