@@ -9,9 +9,10 @@
     <div class="d-flex justify-content-end">
       <div class="d-flex">
         <div class="mx-2">
-            <span><%= u.comments_counter %></span>          <i class="fas fa-comment mx-1"></i>
+            <span><%= @post.comments_counter %></span>       
+               <i class="fas fa-comment mx-1"></i>
         </div>
-        <div class="mx-2 d-flex justify-center">            <span><%= u.likes_counter %></span>          <i class="fas fa-heart mx-1"></i>
+        <div class="mx-2 d-flex justify-center">            <span><%= @post.likes_counter %></span>          <i class="fas fa-heart mx-1"></i>
         </div>
       </div>
     </div>
@@ -23,9 +24,8 @@
         </li>
       <% end %>
     </ul>
-     <h6 class="text-muted">Add New Comment</h6>
+    <h6 class="text-muted">Add New Comment</h6>
     <hr>
      <%= render partial: "new_comment", local: { post: @post } %>
-                 <span><%= post.comments_counter %></span>
   </li>
 </ul>
