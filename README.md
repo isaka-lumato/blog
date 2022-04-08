@@ -61,7 +61,7 @@ rails s
 > to run tests
 
 ```cmd
-bubdle exec rspec
+bundle exec rspec
 ```
 
 ## Author
