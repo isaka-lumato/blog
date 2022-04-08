@@ -1,26 +1,31 @@
  <ul class="list-inline">
   <li class="shadow mb-4 p-3 rounded bg-white">
+   <p>
+      <%= link_to "Go Back", user_posts_path, class: "text-muted text-decoration-none" %>
+    </p>
+    <hr>
     <h4 class="text-muted text-decoration-none"><%= @user.name %></h4>
     <p><%= @post.text %></p>
     <div class="d-flex justify-content-end">
       <div class="d-flex">
         <div class="mx-2">
-          <span>0</span>
-          <i class="fas fa-comment mx-1"></i>
+            <span><%= u.comments_counter %></span>          <i class="fas fa-comment mx-1"></i>
         </div>
-        <div class="mx-2">
-          <span>0</span>
-          <i class="fas fa-heart mx-1"></i>
+        <div class="mx-2 d-flex justify-center">            <span><%= u.likes_counter %></span>          <i class="fas fa-heart mx-1"></i>
         </div>
       </div>
     </div>
     <ul class="list-inline ml-5">
       <% @post.recent_comments.each do |cmt| %>
-        <li class="border-start border-4 border-info px-2">
-          <h5>Username: <%= cmt.author.name %></h5>
+                <li class="border-start border-4 border-info px-2 shadow py-1 mb-2">
+          <h5><%= cmt.author.name %></h5>
           <p><%= cmt.text %></p>
         </li>
       <% end %>
     </ul>
+     <h6 class="text-muted">Add New Comment</h6>
+    <hr>
+     <%= render partial: "new_comment", local: { post: @post } %>
+                 <span><%= post.comments_counter %></span>
   </li>
 </ul>
