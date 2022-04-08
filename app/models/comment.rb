@@ -3,7 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :post
   after_save :update_comment_counter
 
-  private
+  validates :text, presence: true
 
   def update_comment_counter
     post.increment!(:comments_counter)

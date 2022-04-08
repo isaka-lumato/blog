@@ -44,9 +44,6 @@ bundle install
 
 > then to run migrations
 
-
-> thereafter run
-
 ```cmd
 rails db:migrate
 ```
@@ -59,6 +56,12 @@ rails s
 
 ```cmd
 rails s
+```
+
+> to run tests
+
+```cmd
+bubdle exec rspec
 ```
 
 ## Author

@@ -17,8 +17,7 @@
       </div>
     </div>
     <ul class="list-inline ml-5">
-      <% @post.recent_comments.each do |cmt| %>
-                <li class="border-start border-4 border-info px-2 shadow py-1 mb-2">
+      <% @post.comments.includes(:author).each do |cmt| %>                <li class="border-start border-4 border-info px-2 shadow py-1 mb-2">
           <h5><%= cmt.author.name %></h5>
           <p><%= cmt.text %></p>
         </li>

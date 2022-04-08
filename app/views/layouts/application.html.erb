@@ -21,7 +21,15 @@
   <nav class="navbar navbar-light bg-light mb-3">
   <span class="navbar-brand mb-0 h1 pl-4 lead"><h1><%= link_to "BLOG", root_path, class: "nav-link text-info" %></h1></span>
 </nav>
- 
+    <div class="d-flex justify-content-center">
+      <% if flash[:notice] %>
+        <div class="w-50 alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>
+            <%= flash[:notice] %>
+          </strong>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

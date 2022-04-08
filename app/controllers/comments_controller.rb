@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
     )
     @new_comment.post_id = @post.id
     if @new_comment.save
-      redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!'
+      redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Successfully created a comment!'
     else
-      render :new, alert: 'Error occured!'
+      render :new, notice: 'Error occured while creating comment!'
     end
   end
 

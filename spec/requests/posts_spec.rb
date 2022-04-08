@@ -1,35 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe 'GET #index' do
-    before(:each) { get '/users/:user_id/posts' }
+  user = User.create(name: 'isaka', posts_counter: 0)
+  post = user.posts.create(title: 'Post1', text: 'The WebAvenger', likes_counter: 0, comments_counter: 0)
+  describe 'GET posts' do
+    before(:each) { get user_posts_path user_id: user.id }
 
-    it 'should have correct response status' do
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'should render correct template' do
+    it 'should render a template' do
       expect(response).to render_template('posts/index')
     end
 
-    it 'should include correct placeholder text' do
-      expect(response.body).to include('Find me in app/views/posts/index.html.erb')
-    end
-  end
-
-  describe 'GET #show' do
-    before(:each) { get '/users/:user_id/posts/1' }
-
-    it 'should have correct response status' do
+    it 'has a 200 status code' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'should render correct template' do
+    it 'should test heading text inside template' do
+      expect(response.body).to include('Blog')
+    end
+  end
+
+  describe 'GET show' do
+    before(:each) { get user_post_path user_id: user.id, id: post.id }
+
+    it 'Should be 200' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'should render a template' do
       expect(response).to render_template('posts/show')
     end
 
-    it 'should include correct placeholder text' do
-      expect(response.body).to include('Find me in app/views/posts/show.html.erb')
+    it 'should test heading text inside template' do
+      expect(response.body).to include('Blog')
     end
   end
 end
