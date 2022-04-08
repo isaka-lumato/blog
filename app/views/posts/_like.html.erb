@@ -1,0 +1,6 @@
+<%= form_with model: Like.new, method: "post", url: url do |form| %>
+  <%= form.hidden_field :author_id, value: current_user.id %>
+  <%= form.hidden_field :post_id, value: post.id %>
+  <%= form.hidden_field :current_url, value: request.url %>
+  <%= form.submit "❤️", class: "fas fa-heart mx-1 btn" %>
+<% end %> 

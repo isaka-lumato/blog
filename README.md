@@ -1,36 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # Blog
 
-> 
 
-## Project screenshots
-
-![screenshot(COMING SOON)]()
-
-Additional description about the project and its features.
 
 ## Built With
 
@@ -58,7 +28,7 @@ code .
 
 ## How to Run the App through terminal
 
-- To run the application through trminal, make sure ruby and IRB is installed in your computer then follow the guide below:
+- To run the application through terminal, make sure ruby and IRB is installed in your computer then follow the guide below:
   > in your cmd or command line navigate to where this project is located, then;
 
 ```cmd
@@ -70,6 +40,19 @@ cd
 
 ```cmd
 bundle install
+```
+
+> then to run migrations
+
+
+> thereafter run
+
+```cmd
+rails db:migrate
+```
+
+```cmd
+rails s
 ```
 
 > thereafter run

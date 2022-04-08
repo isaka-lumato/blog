@@ -1,7 +1,10 @@
 <%= render "users/u_show" %>
 
 <div class="d-flex justify-content-center">
-  <div>
+  <div class="mb-4 d-flex flex-column justify-content-between">
+<% if current_user == @user %>
+<%= link_to "Add new post", posts_new_path, class: "nav-link btn border border-info border-2 text-info" %></li>
+    <% end %>
     <%= render "posts/post" %>
   </div>
 </div>

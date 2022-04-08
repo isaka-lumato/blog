@@ -1,27 +1,26 @@
 <%= render "users/u_show" %>
-<% @user.recent_posts.each do |u|%>
-<div>
 <% user = User.where(id: params[:id])[0] %>
+ <div class="d-flex justify-content-center mb-5">
+    <a href="<%= users_path + "/" + user.id.to_s + "/posts" %>" class="btn btn-info text-white">Show All Posts</a>
+  </div>
+<% @user.recent_posts.each do |u| %>
+<div>
 <h1>
-<%=u.title%>
+<%= u.title %>
 </h1>
-<p><%=truncate u.text, length: 150 %></p>
+<p><%= truncate u.text, length: 150 %></p>
    <div class="d-flex justify-content-end">
         <div class="d-flex">
           <div class="mx-2">
-            <span>0</span>
-            <i class="fas fa-comment mx-1"></i>
+            <span><%= u.comments_counter %></span>            <i class="fas fa-comment mx-1"></i>
           </div>
-          <div class="mx-2">
-            <span>0</span>
-            <i class="fas fa-heart mx-1"></i>
+          <div class="mx-2 d-flex justify-center">            <span><%= u.likes_counter %></span>            <i class="fas fa-heart mx-1"></i>
+                        <%= render partial: "posts/like", locals: { url: "/users/#{@user.id}/posts/#{u.id}/likes", post: u } %>
           </div>
         </div>
       </div>
        
-  <div class="d-flex justify-content-center mb-5">
-    <a href="<%= users_path + "/" + user.id.to_s + "/posts" %>" class="btn btn-info text-white">Show All Posts</a>
-  </div>
-<%end%>
+<% end %>
+ 
 
 </div>
