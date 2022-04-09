@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = @user.posts.includes(:comments).order(created_at: :desc)
   end
 
   def show
@@ -18,8 +18,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        flash[:notice] = 'Post created successfully. 👍'
         format.html { redirect_to user_posts_url(current_user.id) }
       else
+        flash[:notice] = 'Post creation failed. Try again'
         format.html { render :new }
       end
     end
