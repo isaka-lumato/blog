@@ -1,5 +1,5 @@
-current directory: /home/isaka/blog/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
-/home/isaka/.rbenv/versions/3.0.3/bin/ruby -I /home/isaka/.rbenv/versions/3.0.3/lib/ruby/3.0.0 -r ./siteconf20220404-523161-x7b7me.rb extconf.rb
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+/home/isaka/.rbenv/versions/3.0.0/bin/ruby -I /home/isaka/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20220416-111309-6ct4yr.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for linux/io_uring.h... yes
@@ -11,11 +11,11 @@ checking for port_event_t in port.h... no
 checking for sys/resource.h... yes
 creating Makefile
 
-current directory: /home/isaka/blog/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\= clean
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" clean
 
-current directory: /home/isaka/blog/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\=
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR="
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -87,11 +87,11 @@ selector.c:301:26: warning: passing argument 1 of ‘rb_ensure’ from incompati
       |                          ^~~~
       |                          |
       |                          VALUE (*)(VALUE *) {aka long unsigned int (*)(long unsigned int *)}
-In file included from /home/isaka/.rbenv/versions/3.0.3/include/ruby-3.0.0/ruby/ruby.h:38,
-                 from /home/isaka/.rbenv/versions/3.0.3/include/ruby-3.0.0/ruby.h:38,
+In file included from /home/isaka/.rbenv/versions/3.0.0/include/ruby-3.0.0/ruby/ruby.h:38,
+                 from /home/isaka/.rbenv/versions/3.0.0/include/ruby-3.0.0/ruby.h:38,
                  from nio4r.h:10,
                  from selector.c:6:
-/home/isaka/.rbenv/versions/3.0.3/include/ruby-3.0.0/ruby/internal/iterator.h:53:17: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE *)’ {aka ‘long unsigned int (*)(long unsigned int *)’}
+/home/isaka/.rbenv/versions/3.0.0/include/ruby-3.0.0/ruby/internal/iterator.h:53:17: note: expected ‘VALUE (*)(VALUE)’ {aka ‘long unsigned int (*)(long unsigned int)’} but argument is of type ‘VALUE (*)(VALUE *)’ {aka ‘long unsigned int (*)(long unsigned int *)’}
    53 | VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
       |                 ^~~~~~~~~~~~~~~
 selector.c: In function ‘NIO_Selector_wakeup’:
@@ -104,6 +104,6 @@ cc1: note: unrecognized command-line option ‘-Wno-parentheses-equality’ may 
 cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ may have been intended to silence earlier diagnostics
 linking shared-object nio4r_ext.so
 
-current directory: /home/isaka/blog/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
-make DESTDIR\= install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20220404-523161-jycvmi
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20220416-111309-pofmzr

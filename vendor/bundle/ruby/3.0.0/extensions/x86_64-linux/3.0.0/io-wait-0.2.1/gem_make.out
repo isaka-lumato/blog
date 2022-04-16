@@ -1,0 +1,18 @@
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+/home/isaka/.rbenv/versions/3.0.0/bin/ruby -I /home/isaka/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20220416-111309-q3nkcu.rb extconf.rb
+checking for rb_io_wait()... yes
+checking for sys/ioctl.h... yes
+checking for FIONREAD in sys/ioctl.h,sys/ioctl.h... yes
+creating Makefile
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR=" clean
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR="
+compiling wait.c
+linking shared-object io/wait.so
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/io-wait-0.2.1/ext/io/wait
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 wait.so ./.gem.20220416-111309-hrdy7h/io

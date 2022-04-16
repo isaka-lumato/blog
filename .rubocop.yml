@@ -1,3 +1,4 @@
+   
 AllCops:
   NewCops: enable
   Exclude:
@@ -6,13 +7,12 @@ AllCops:
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
-    - vendor/**/*
     - "node_modules/**/*"
-
+    - 'vendor/**/*'
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 500
+  Max: 120
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"

@@ -1,10 +1,39 @@
-<%= render "users/u_show" %>
-
-<div class="d-flex justify-content-center">
-  <div class="mb-4 d-flex flex-column justify-content-between">
-<% if current_user == @user %>
-<%= link_to "Add new post", posts_new_path, class: "nav-link btn border border-info border-2 text-info" %></li>
+<div class="page-container">
+  <div class="display-flex">
+    <div class="user-photo-container">
+      <img class="user-photo" src=<%= @user.photo %> >
+    </div>
+    <div class="user-text-details-container">
+      <h2><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <ul>
+    <% @posts.each do |post| %>
+    <%= link_to "#{root_path}users/#{@user.id}/posts/#{post.id}", class: "text-decoration-none" do %>
+      <li class="padding-20-px background-color-aliceblue">
+        <h3> <%= post.title %> </h3>
+        <p class="paragraph-text display-flex flex-direction-column">
+          <span><%= post.text %></span>
+          <span class="align-self-end">Comments: <%= @comments.where(post_id: post.id).count %>, Likes: <%= @likes.where(post_id: post.id).count %></span>
+        </p>
+        <h4>Comments:</h4>
+          <% post.five_recent_comments.each do |single_comment|%>
+          <% if single_comment.post_id == post.id %>
+            <% commentor = User.find_by(id: single_comment.author_id) %>
+            <p>
+              <span><strong><%= commentor.name %></strong>: </span>
+              <span><em><%= single_comment.text %></em></span>
+            </p>
+          <% end %>
+        <% end %>
+      </li>
+      <% end %>
     <% end %>
-    <%= render "posts/post" %>
+  </ul>
+    <div class="text-align-center">
+      <%= render "partials/post" %>
+
+    <button class="see-all-posts-button">Pagination</button>
   </div>
 </div>

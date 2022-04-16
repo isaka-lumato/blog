@@ -1,27 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it { should validate_presence_of(:title) }
+  describe 'post model validations' do
+    subject do
+      Post.new
+    end
 
-  it { should validate_presence_of(:text) }
+    before { subject.save }
 
-  context 'when validating format of attributes' do
-    it { should validate_numericality_of(:comments_counter).is_greater_than(-1) }
-  end
+    it 'title presence' do
+      subject.title = nil
+      expect(subject).to_not be_valid
+    end
 
-  context 'when validating format of attributes' do
-    it { should validate_numericality_of(:likes_counter).is_greater_than(-1) }
-  end
+    it 'title should not exceed 250 char' do
+      subject.title = 'post 1' * 251
+      expect(subject).to_not be_valid
+    end
 
-  it 'loads only the recent 5 comments' do
-    expect(subject.recent_comments).to eq(subject.comments.last(5))
-  end
+    it 'Likes counter should be integer ' do
+      subject.likes_counter = 1.7
+      expect(subject).to_not be_valid
+    end
 
-  it 'updates a posts comments correctly' do
-    user = User.create(name: 'WevAvenger', posts_counter: 0)
-    post = user.posts.create(title: 'Post1', text: 'Using the Web to Avenger for the world! Yeeh', likes_counter: 0,
-                             comments_counter: 0)
-    post.comments.create(author_id: user.id, post_id: post.id, text: 'Hi isaka WebAvenger!')
-    expect(post.comments_counter).to eql(1)
+    it 'Likes counter should be greater or equal to 0 ' do
+      subject.likes_counter = -1
+      expect(subject).to_not be_valid
+    end
+
+    describe 'post model method' do
+      before { 10.times { |_comment| Comment.create(post_id: subject.id) } }
+    end
   end
 end

@@ -1,13 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it { should validate_presence_of(:name) }
+  describe 'User model validations' do
+    subject do
+      User.new
+    end
 
-  context 'when validating format of attributes' do
-    it { should validate_numericality_of(:posts_counter).is_greater_than(-1) }
-  end
+    before { subject.save }
 
-  it 'shows three posts' do
-    expect(subject.recent_posts).to eq(subject.posts.last(3))
+    it 'name presence' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'bio presence' do
+      subject.bio = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'posts counter should be integer ' do
+      subject.posts_counter = 1.7
+      expect(subject).to_not be_valid
+    end
+
+    it 'posts counter should be greater or equal to 0 ' do
+      subject.posts_counter = -1
+      expect(subject).to_not be_valid
+    end
   end
 end

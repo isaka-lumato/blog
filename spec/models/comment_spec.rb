@@ -1,5 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  it { should validate_presence_of(:text) }
+  describe 'comment model methods' do
+    subject do
+      Comment.new
+    end
+
+    before { subject.save }
+
+    it 'title presence' do
+      subject.text = nil
+      expect(subject).to_not be_valid
+    end
+  end
 end

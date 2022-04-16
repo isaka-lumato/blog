@@ -1,30 +1,29 @@
- <ul class="list-inline">
-  <li class="shadow mb-4 p-3 rounded bg-white">
-   <p>
-      <%= link_to "Go Back", user_posts_path, class: "text-muted text-decoration-none" %>
-    </p>
-    <hr>
-    <h4 class="text-muted text-decoration-none"><%= @user.name %></h4>
-    <p><%= @post.text %></p>
-    <div class="d-flex justify-content-end">
-      <div class="d-flex">
-        <div class="mx-2">
-            <span><%= @post.comments_counter %></span>       
-               <i class="fas fa-comment mx-1"></i>
-        </div>
-        <div class="mx-2 d-flex justify-center">            <span><%= @post.likes_counter %></span>          <i class="fas fa-heart mx-1"></i>
-        </div>
-      </div>
+
+<div class="page-container">
+  <div class="display-flex justify-content-space-between align-items-center">
+    <div>
+      <h2><%= @post.title %> By: <%= @user.name %></h2>
     </div>
-    <ul class="list-inline ml-5">
-      <% @post.comments.includes(:author).each do |cmt| %>                <li class="border-start border-4 border-info px-2 shadow py-1 mb-2">
-          <h5><%= cmt.author.name %></h5>
-          <p><%= cmt.text %></p>
-        </li>
-      <% end %>
-    </ul>
-    <h6 class="text-muted">Add New Comment</h6>
-    <hr>
-     <%= render partial: "new_comment", local: { post: @post } %>
-  </li>
-</ul>
+    <div>
+      <p>
+        <span>Comments: <%= @comments.where(post_id: @post.id).count %>, Likes: <%= @likes.where(post_id: @post.id).count %></span>
+      </p>
+    </div>
+  </div>
+  <div>
+    <p class="paragraph-text"><%= @post.text %></p>
+  </div>
+  <div class="background-color-aliceblue padding-20-px">
+  <h4>Comments:</h4>
+  <% @comments.each do |comment| %>
+    <% if comment.post_id == @post.id %>
+      <p>
+        -<% @users.each do |user| %>
+          <%= user.name if user.id == comment.author_id %>
+        <% end %>
+        :<%= comment.text %></p>
+    <% end %>
+  <% end %>
+      <%= render "partials/comment" %>
+  </div>
+</div>
