@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/ruby/reline".freeze
   s.licenses = ["Ruby".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.5".freeze)
-  s.rubygems_version = "3.2.32".freeze
+  s.rubygems_version = "3.2.3".freeze
   s.summary = "Alternative GNU Readline or Editline implementation by pure Ruby.".freeze
 
-  s.installed_by_version = "3.2.32" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.2.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

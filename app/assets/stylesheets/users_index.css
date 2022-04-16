@@ -1,0 +1,123 @@
+.page-container {
+  padding: 40px;
+}
+
+.see-all-posts-button {
+  padding: 8px 18px;
+  background-color: coral;
+  color: white;
+  font-weight: 300;
+  font-size: large;
+  border-radius: 4px;
+}
+
+.border-none,
+.post-title-field,
+.post-text-field,
+.see-all-posts-button,
+.post-submit-button {
+  border: none;
+}
+
+.see-all-posts-button:hover {
+  background-color: rgb(54, 4, 4);
+  cursor: pointer;
+}
+
+.align-self-end {
+  align-self: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.user-photo-container {
+  margin: 20px;
+}
+
+.user-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.user-text-details-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 80%;
+}
+
+.user-text-details-container p {
+  float: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.background-color-aliceblue {
+  background-color: aliceblue;
+}
+
+.padding-20-px {
+  padding: 20px;
+}
+
+.paragraph-text {
+  background-color: rgba(172, 162, 149, 0.2);
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.float-right {
+  float: right;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.new-post-container {
+  text-align: left;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.post-title-field,
+.post-text-field {
+  margin-bottom: 16px;
+  background-color: rgb(245, 241, 236);
+  height: 40px;
+  padding-left: 25px;
+}
+
+.post-submit-button {
+  width: 140px;
+  background-color: black;
+  padding: 6px;
+  font-size: large;
+  color: white;
+  border-radius: 3px;
+}

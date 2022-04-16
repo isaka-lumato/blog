@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/janlelis/unicode-display_width".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3".freeze)
-  s.rubygems_version = "3.2.32".freeze
+  s.rubygems_version = "3.2.3".freeze
   s.summary = "Determines the monospace display width of a string in Ruby.".freeze
 
-  s.installed_by_version = "3.2.32" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.2.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

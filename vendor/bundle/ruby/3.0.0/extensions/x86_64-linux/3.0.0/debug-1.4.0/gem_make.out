@@ -1,0 +1,16 @@
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/debug-1.4.0/ext/debug
+/home/isaka/.rbenv/versions/3.0.0/bin/ruby -I /home/isaka/.rbenv/versions/3.0.0/lib/ruby/3.0.0 -r ./siteconf20220416-111309-f02da9.rb extconf.rb
+creating Makefile
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" clean
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR="
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/isaka/Pictures/blog-app-rails/vendor/bundle/ruby/3.0.0/gems/debug-1.4.0/ext/debug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220416-111309-mp46dl/debug
