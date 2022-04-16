@@ -1,3 +1,4 @@
+   
 AllCops:
   NewCops: enable
   Exclude:
@@ -7,7 +8,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-
+    - 'vendor/**/*'
   DisplayCopNames: true
 
 Layout/LineLength:

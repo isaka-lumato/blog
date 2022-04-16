@@ -220,6 +220,11 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.15.1)
       parser (>= 3.0.1.1)
+    rubocop-discourse (2.5.0)
+      rubocop (>= 1.1.0)
+      rubocop-rspec (>= 2.0.0)
+    rubocop-rspec (2.9.0)
+      rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
@@ -278,6 +283,7 @@ DEPENDENCIES
   rails (~> 7.0.1)
   rspec-rails
   rubocop (>= 1.0, < 2.0)
+  rubocop-discourse
   selenium-webdriver
   sprockets-rails
   stimulus-rails
@@ -290,4 +296,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.3.6
+   2.3.11
